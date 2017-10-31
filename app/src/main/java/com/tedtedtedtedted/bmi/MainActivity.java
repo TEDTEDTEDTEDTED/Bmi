@@ -1,4 +1,5 @@
 package com.tedtedtedtedted.bmi;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,6 +25,11 @@ public class MainActivity extends AppCompatActivity {
         float bmi = weight/(height*height);
         Log.d("BMI",String.valueOf(bmi));
         Toast.makeText(this,String.valueOf(bmi),Toast.LENGTH_LONG).show();
-
+        new AlertDialog.Builder(this)
+                .setMessage(String.valueOf(bmi)+"")
+                .setTitle("BMI運算")
+                .setPositiveButton("OK",null)
+                .setNeutralButton("Cancel",null)
+                .show();
     }
 }
