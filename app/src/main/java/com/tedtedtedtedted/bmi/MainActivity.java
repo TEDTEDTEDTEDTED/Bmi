@@ -18,8 +18,8 @@ public class MainActivity extends AppCompatActivity {
         bhelp.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 new AlertDialog.Builder(MainActivity.this)
-                        .setMessage("BMI說明")
-                        .setTitle("BMI")
+                        .setMessage("身高體重指數（又稱身體質量指數，英文為Body Mass Index，簡稱BMI）是計算值，主要用於統計用途。")
+                        .setTitle("BMI說明")
                         .setPositiveButton("OK",null)
                         .setNeutralButton("Cancel",null)
                         .show();
