@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void bmi(View view){
-        Log.d("MainActivity","GGG");
         EditText edWeight =(EditText) findViewById(R.id.ed_weight);
         EditText edHeight =(EditText) findViewById(R.id.ed_height);
         String w = edWeight.getText().toString();
@@ -38,13 +37,10 @@ public class MainActivity extends AppCompatActivity {
         float weight = Float.parseFloat(w);
         float height = Float.parseFloat(w);
         float bmi = weight/(height*height);
-        Log.d("BMI",String.valueOf(bmi));
-        Toast.makeText(this,String.valueOf(bmi),Toast.LENGTH_LONG).show();
-        new AlertDialog.Builder(this)
-                .setMessage(String.valueOf(bmi)+"")
-                .setTitle("BMI運算")
-                .setPositiveButton("OK",null)
-                .setNeutralButton("Cancel",null)
-                .show();
+        if(bmi<20){
+            new AlertDialog.Builder(this)
+                    .setMessage(bmi+"請多吃點")
+                    .show();
+        }
     }
 }
